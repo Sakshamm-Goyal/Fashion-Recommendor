@@ -1,0 +1,36 @@
+version: "3.9"
+
+services:
+  pg:
+    image: pgvector/pgvector:pg16
+    container_name: elara_pg
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: elara
+      POSTGRES_USER: elara
+      POSTGRES_PASSWORD: elara
+    ports:
+      - "5435:5432"
+    volumes:
+      - pg_data:/var/lib/postgresql/data
+      - ./docker/init:/docker-entrypoint-initdb.d
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U elara -d elara"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
+  redis:
+    image: redis:7
+    container_name: elara_redis
+    restart: unless-stopped
+    ports:
+      - "6380:6379"
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 5s
+      timeout: 3s
+      retries: 20
+
+volumes:
+  pg_data:
