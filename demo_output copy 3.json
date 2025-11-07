@@ -1,0 +1,85 @@
+{
+  "recommendations": [
+    {
+      "look": "Wardrobe Hero",
+      "score": 8.8,
+      "summary": "A chic minimalist wedding outfit using a stylish brown crochet sweater and navy chinos.",
+      "items": [
+        {
+          "item_type": "wardrobe",
+          "slot": "top",
+          "source": "wardrobe",
+          "wardrobe_item_id": "item_000345"
+        },
+        {
+          "item_type": "wardrobe",
+          "slot": "bottom",
+          "source": "wardrobe",
+          "wardrobe_item_id": "item_000346"
+        }
+      ],
+      "reasoning": {
+        "weather": "Lightweight sweater is perfect for mild weather while chinos provide comfort.",
+        "occasion": "Navy chinos and a brown sweater create a smart-casual look suitable for a chill wedding vibe.",
+        "color": "Brown and navy complement olive skin tones well, adding warmth and sophistication.",
+        "fit": "The slim fit of the chinos and structured sweater suit an athletic build.",
+        "trend": "Neutral tones and crochet texture align with current trends."
+      },
+      "tags": [
+        "minimalist",
+        "chic",
+        "wedding"
+      ]
+    },
+    {
+      "look": "Smart Upgrade",
+      "score": 8.53,
+      "summary": "Elevate your style with a romantic dress and essential accessories for a wedding.",
+      "items": [
+        {
+          "item_type": "purchase",
+          "slot": "accessory",
+          "source": "H&M",
+          "retailer": "H&M",
+          "name": "Straw Clutch Bag - Light beige/gold-colored",
+          "price": null,
+          "image": null,
+          "buy_link": "https://www2.hm.com/en_us/productpage.1229393001.html",
+          "match_explainer": "Beige clutch",
+          "brand": null
+        }
+      ],
+      "reasoning": {
+        "weather": "The lace dress is breathable and suitable for mild weather.",
+        "occasion": "A lace midi dress is perfect for a wedding, offering elegance and sophistication.",
+        "color": "Beige complements olive skin tones and aligns with the user's color preferences.",
+        "fit": "The slim fit of the dress enhances an athletic build.",
+        "trend": "Lace and neutral tones are on-trend for the current season."
+      },
+      "tags": [
+        "romantic",
+        "elegant",
+        "wedding"
+      ]
+    },
+    {
+      "look": "Fresh Investment",
+      "score": 7.76,
+      "summary": "Invest in key pieces for a versatile and stylish wedding look.",
+      "items": [],
+      "reasoning": {
+        "weather": "The slip dress is suitable for mild temperatures and can be layered if needed.",
+        "occasion": "The black slip dress is elegant and versatile, perfect for a wedding.",
+        "color": "Black is a classic choice that complements olive skin tones and matches the user's preferences.",
+        "fit": "A slip dress flatters an athletic build by highlighting the shoulders and waist.",
+        "trend": "The slip dress and monochrome accessories are timeless yet trendy."
+      },
+      "tags": [
+        "versatile",
+        "classic",
+        "wedding"
+      ]
+    }
+  ],
+  "context_hash": "13c2f41a4d97923a9161188ee9d164e2cf309eeabcecf31a6d1b15cb4525f0d3"
+}

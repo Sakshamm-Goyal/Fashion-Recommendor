@@ -8,8 +8,11 @@ pydantic>=2.6           # Data validation and schema enforcement
 
 # HTTP & Web
 requests>=2.31          # HTTP library for API calls
+httpx>=0.27.0           # Modern async HTTP client for new integrations
 beautifulsoup4>=4.12.0  # HTML parsing for web scraping
 lxml>=4.9.0             # XML/HTML parser (faster than html.parser)
+selenium>=4.15.0        # Web browser automation for scraping
+playwright>=1.40.0      # Modern browser automation for parallel link verification
 
 # Database & Cache
 redis>=5.0              # Redis client for caching

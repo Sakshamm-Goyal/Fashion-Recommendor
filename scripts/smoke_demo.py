@@ -80,8 +80,12 @@ def demo_payload():
         "limits": {
             "max_online_items_per_look": 3,
             "retailers_allowlist": [
-                "Zara", "H&M", "ASOS", "Nordstrom", "Macy's",
-                "Amazon Fashion", "Urban Outfitters", "Revolve"
+                # Primary retailers
+                "Zara", "H&M", "ASOS", "Macy's",
+                "Amazon Fashion", "Urban Outfitters", "Revolve",
+                # Fallbacks (commonly available)
+                "Nordstrom", "Bloomingdale's", "Target",
+                "DSW", "Anthropologie", "JCPenney"
             ]
         }
     }
@@ -173,7 +177,10 @@ def main():
                 print(f"     • [Wardrobe] Item {item['wardrobe_item_id']}")
             else:
                 print(f"     • [{item['source']}] {item['name']}")
-                print(f"       ${item['price']['value']} - {item['buy_link']}")
+                if item.get('price') and item['price'].get('value'):
+                    print(f"       ${item['price']['value']} - {item['buy_link']}")
+                else:
+                    print(f"       Price: Not available - {item['buy_link']}")
         print()
         print("   Reasoning:")
         for key, value in result["reasoning"].items():

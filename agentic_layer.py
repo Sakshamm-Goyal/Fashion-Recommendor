@@ -222,8 +222,18 @@ async def fetch_buy_links(llm_output: dict, ctx: dict) -> dict:
 
         outfit["_pending_online"] = enriched_items
 
-    # Phase 2: Execute all searches in parallel
-    results = await asyncio.gather(*tasks) if tasks else []
+    # Phase 2: Execute searches sequentially to prevent OpenSERP overload
+    # NOTE: Changed from parallel to sequential because 12 parallel searches
+    # overwhelm OpenSERP even with per-client rate limiting
+    results = []
+    if tasks:
+        for i, task in enumerate(tasks):
+            print(f"[ProductMatch] Searching {i+1}/{len(tasks)}...")
+            result = await task
+            results.append(result)
+            # Small delay between searches to give OpenSERP breathing room
+            if i < len(tasks) - 1:
+                await asyncio.sleep(0.5)
 
     # Phase 3: Rerank and attach products
     idx = 0
@@ -231,9 +241,13 @@ async def fetch_buy_links(llm_output: dict, ctx: dict) -> dict:
         candidates = results[idx]
         idx += 1
 
+        print(f"[ProductMatch] '{comp['descriptor']}' -> {len(candidates)} candidates found")
+
         # Rerank candidates with full context for better evaluation
         ids = await llm_rerank(comp["descriptor"], candidates, ctx) if candidates else []
         picks = pick_first_by_ids(ids, candidates) or candidates[:1]
+
+        print(f"[ProductMatch] After reranking: {len(picks)} products selected")
 
         # Attach best match
         # NOTE: Affiliate link enrichment commented out for now
@@ -281,7 +295,7 @@ async def fetch_buy_links(llm_output: dict, ctx: dict) -> dict:
                         "source": p.retailer,
                         "retailer": p.retailer,  # Explicit retailer field for clarity
                         "name": p.title,
-                        "price": {"value": float(p.price), "currency": p.currency},
+                        "price": {"value": float(p.price), "currency": p.currency} if p.price is not None else None,
                         "image": p.image,
                         "buy_link": buy_link,
                         "match_explainer": comp.get("descriptor", ""),

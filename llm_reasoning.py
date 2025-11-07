@@ -113,28 +113,68 @@ Create strategic variety across your 3 outfit options:
 2. **Use exact wardrobe item IDs** - reference existing items by their IDs
 3. **Respect budget constraints** - stay within soft cap, never exceed hard cap
 4. **Maximum {max_online} online items per look** - strict limit
-5. **Return exactly 3 COMPLETE looks** - CRITICAL REQUIREMENTS:
+5. **Return exactly 3 COMPLETE looks** - CRITICAL COMPOSITION REQUIREMENTS:
 
-   **Every outfit MUST include (minimum):**
-   - ✅ Top (shirt, t-shirt, blouse, sweater, etc.)
-   - ✅ Bottom (pants, jeans, skirt, shorts, etc.)
-   - ✅ Footwear (shoes, boots, sneakers, heels, etc.)
-   - ✅ **At least 1-2 accessories** (see gender-specific requirements below)
-   - ✅ Outerwear (jacket, blazer, coat) - when weather/occasion requires
+   ## Men's Outfit Structure (5 parts minimum)
 
-   **Gender-Specific Completeness:**
+   **REQUIRED SLOTS (3):**
+   - ✅ `top`: shirt, t-shirt, sweater, polo, hoodie
+   - ✅ `bottom`: jeans, chinos, trousers, shorts, joggers
+   - ✅ `footwear`: sneakers, boots, loafers, dress shoes, sandals
 
-   **Men's Outfits MUST include:**
-   - Belt (when wearing dress pants/chinos/jeans)
-   - Watch (universal accessory)
-   - Plus ONE of: tie, pocket square, sunglasses, bag, or hat (occasion-dependent)
+   **OPTIONAL SLOT (1):**
+   - `outerwear`: jacket, blazer, coat, bomber, cardigan (weather/occasion dependent)
 
-   **Women's Outfits MUST include:**
-   - Bag/purse (universal for most occasions)
-   - Jewelry (earrings, necklace, or bracelet - at least one piece)
-   - Plus ONE of: scarf, belt, sunglasses, or hat (occasion-dependent)
+   **ACCESSORIES (2-3 required):**
+   Must include at least 2, ideally 3 from:
+   - Watch (highly recommended - universal accessory)
+   - Belt (required with dress pants/chinos/jeans)
+   - Sunglasses
+   - Hat/Cap
+   - Scarf
+   - Bag/Backpack
+   - Bracelet/Necklace (if user's style allows)
 
-   **NO INCOMPLETE OUTFITS!** If an outfit doesn't have proper accessories, it's not complete.
+   **TOTAL: 5 parts** (3 required + 2-3 accessories, optional outerwear)
+
+   ## Women's Outfit Structure (7-8 parts minimum)
+
+   **REQUIRED SLOTS (1):**
+   - ✅ `footwear`: heels, flats, sandals, boots, sneakers, mules, wedges
+
+   **OUTFIT CHOICE (2-3 slots):**
+   Choose ONE of the following:
+   - **Option A**: `top` + `bottom` (blouse/shirt + jeans/skirt/trousers)
+   - **Option B**: `one_piece` (dress, jumpsuit, romper)
+
+   **OPTIONAL SLOT (1):**
+   - `outerwear`: jacket, blazer, coat, cardigan, kimono (weather/occasion dependent)
+
+   **ACCESSORIES (4-5 required):**
+   Must include at least 4, ideally 5 from:
+   - Handbag/Clutch (highly recommended - universal accessory)
+   - Jewelry (earrings, necklace, bracelet, ring - at least 2 pieces)
+   - Sunglasses
+   - Belt
+   - Scarf
+   - Hat
+   - Watch
+
+   **MAKEUP (required):**
+   - ✅ Include `makeup` suggestion with style, focus, color_palette, and description
+
+   **TOTAL: 7-8 parts** (1 footwear + 2-3 outfit pieces + 4-5 accessories + outerwear optional)
+
+   ## Composition Validation Checklist
+
+   Before finalizing each outfit, verify:
+   - [ ] All required slots filled
+   - [ ] Minimum accessory count met
+   - [ ] Makeup included (women only)
+   - [ ] Slot types match gender (e.g., no "one_piece" for men)
+   - [ ] Each item has proper `slot`, `source`, and either `wardrobe_item_id` OR `descriptor`
+
+   **NO INCOMPLETE OUTFITS!** If an outfit doesn't meet these requirements, it's not complete.
 
 6. **Provide complete wardrobe gap analysis** before outfits
 7. **For online items**:
@@ -155,13 +195,29 @@ For each outfit, provide detailed reasoning in these categories:
 **Be specific and educational!** Help users understand why choices work.
 
 ## Scoring Guidance (Transparency)
-Your suggestions will be scored on:
-- Weather Appropriateness (20%)
-- Occasion Match (25%)
-- Color Compatibility (20%)
-- Fit & Body Type (20%)
-- Brand & Budget Fit (10%)
-- Trend Alignment (5%)
+Your suggestions will be scored on 10 dimensions across 4 categories:
+
+**CONTEXTUAL RELEVANCE (40%):**
+- Weather Match (15%) - Fabric and layering appropriateness
+- Occasion Appropriateness (15%) - Dress code and style fit
+- Location Style (10%) - Cultural and regional fashion norms
+
+**PERSONALIZATION (30%):**
+- Color Harmony (10%) - Coordination and user preferences
+- Fit & Body Type (10%) - Silhouette match with body type
+- Brand & Budget (6%) - Brand preferences and budget alignment
+- Style Preference (4%) - Match with user's personal style
+
+**PRACTICAL FEASIBILITY (20%):**
+- Availability (8%) - Product stock status
+- Delivery Time (7%) - Shipping speed and reliability
+- Wardrobe Versatility (5%) - How well online items integrate with existing wardrobe
+
+**FASHION QUALITY (10%):**
+- Fabric Quality (5%) - Material quality and durability signals
+- Trend Relevance (5%) - Current fashion trends and timelessness
+
+**Optimize for high scores by balancing all dimensions!**
 
 ## Output Format
 Return valid JSON with:

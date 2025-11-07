@@ -38,7 +38,7 @@ class CompositionItem(BaseModel):
 
     Enhanced with gap reasoning and budget guidance for intelligent shopping.
     """
-    slot: Literal["top", "bottom", "outerwear", "footwear", "accessory"]
+    slot: Literal["top", "bottom", "outerwear", "footwear", "accessory", "one_piece"]  # Added one_piece for dresses/jumpsuits
     source: Literal["wardrobe", "online"]
     wardrobe_item_id: Optional[str] = None
     needs_online_alt: bool = False
@@ -49,10 +49,27 @@ class CompositionItem(BaseModel):
     budget_tier: Optional[Literal["budget", "mid", "premium"]] = None  # Price guidance
     impact_score: Optional[int] = Field(default=None, ge=1, le=10)  # Versatility with wardrobe (1-10)
 
+    # NEW: Composition preferences
+    fit_preference: Optional[str] = None  # slim, regular, relaxed, oversized
+    fabric_preference: Optional[str] = None  # cotton, wool, linen, etc.
+    color_requirement: Optional[str] = None  # Required color for this slot
+
+
+class MakeupSuggestion(BaseModel):
+    """
+    Makeup suggestion for women's outfits.
+    Provides textual guidance on makeup style and color palette.
+    """
+    style: Literal["light", "natural", "glamorous", "dramatic", "minimal"] = "natural"
+    focus: Literal["eyes", "lips", "overall", "none"] = "overall"
+    color_palette: List[str] = []  # e.g., ["neutral", "warm", "rose", "berry", "smokey"]
+    description: constr(min_length=10, max_length=200)  # e.g., "Soft and romantic with rose tones"
+
 
 class Outfit(BaseModel):
     """
     A complete outfit recommendation with reasoning and metadata.
+    Enhanced with makeup suggestions and composition validation.
     """
     name: constr(strip_whitespace=True, min_length=3)
     summary: str
@@ -60,6 +77,12 @@ class Outfit(BaseModel):
     reasoning: Dict[str, str]
     tags: List[str] = []
     score_suggestion: Optional[float] = Field(default=None, ge=0, le=10)
+
+    # NEW: Makeup suggestion (women only)
+    makeup: Optional[MakeupSuggestion] = None
+
+    # NEW: Composition validation results
+    composition_validation: Optional[Dict[str, bool]] = None
 
 
 class WardrobeGapAnalysis(BaseModel):
@@ -88,14 +111,15 @@ class Product(BaseModel):
     """
     Represents a product from any source (vector DB, APIs, scrapers).
     Unified model for all product search results.
+    Enhanced with new fields for advanced scoring.
     """
     id: str
     title: str
-    price: float
+    price: Optional[float] = None  # Optional since some sources (like OpenSERP) don't provide prices
     currency: str = "USD"
     url: str
     image: Optional[str] = None
-    retailer: str
+    retailer: Optional[str] = None  # Optional since some sources may not have retailer info
     brand: Optional[str] = None
 
     # Metadata
@@ -108,18 +132,34 @@ class Product(BaseModel):
     # Availability & Shipping
     in_stock: bool = True
     shipping_days: Optional[int] = None
+    availability_status: Literal["in_stock", "low_stock", "backorder", "out_of_stock"] = "in_stock"  # NEW
 
     # Quality Signals
     rating: Optional[float] = Field(default=None, ge=0, le=5)  # 0-5 stars
     review_count: Optional[int] = None
+    avg_rating: Optional[float] = Field(default=None, ge=0, le=5)  # Alias for compatibility
+    has_reviews: Optional[bool] = None
 
     # Search Metadata
-    source: Literal["vector_db", "google_shopping", "asos", "affiliate", "scraper", "chatgpt", "web_search"] = "vector_db"
+    source: Literal["vector_db", "google_shopping", "asos", "affiliate", "scraper", "chatgpt", "web_search", "searchapi_shopping", "retailed_io", "openserp", "visual_scraping", "claude_web_search"] = "vector_db"
     relevance_score: Optional[float] = None  # Semantic similarity or rank score
 
     # Affiliate
     affiliate_link: Optional[str] = None
     commission_rate: Optional[float] = None
+
+    # NEW FIELDS for enhanced scoring
+    fit_type: Optional[Literal["slim", "regular", "relaxed", "oversized"]] = None
+    fabric_type: Optional[str] = None  # cotton, wool, linen, silk, etc.
+    fabric_quality_score: Optional[int] = Field(default=None, ge=0, le=100)  # 0-100 scale
+    is_trending: bool = False
+    condition: Literal["new", "used", "refurbished"] = "new"
+
+    # Additional metadata from SearchAPI
+    delivery_string: Optional[str] = None  # Raw delivery text: "Free by 7/16"
+    num_reviews: Optional[int] = None
+    original_price: Optional[float] = None  # For discounted items
+    discount_tag: Optional[str] = None  # e.g., "14% OFF"
 
 
 class ProductSearchResult(BaseModel):

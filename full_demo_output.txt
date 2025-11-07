@@ -1,0 +1,293 @@
+[OpenSERP] Connection error on attempt 1/3: RemoteProtocolError
+[OpenSERP] Connection error on attempt 1/3: RemoteProtocolError
+[OpenSERP] Connection error on attempt 1/3: RemoteProtocolError
+[OpenSERP] Connection error on attempt 1/3: RemoteProtocolError
+[OpenSERP] Connection error on attempt 1/3: RemoteProtocolError
+[OpenSERP] Connection error on attempt 1/3: RemoteProtocolError
+[OpenSERP] Connection error on attempt 1/3: RemoteProtocolError
+[OpenSERP] Connection error on attempt 1/3: RemoteProtocolError
+[OpenSERP] Connection error on attempt 1/3: RemoteProtocolError
+[OpenSERP] Connection error on attempt 1/3: RemoteProtocolError
+[OpenSERP] Connection error on attempt 1/3: RemoteProtocolError
+[OpenSERP] Connection error on attempt 1/3: RemoteProtocolError
+[OpenSERP] Connection error on attempt 2/3: ConnectError
+[OpenSERP] Connection error on attempt 2/3: ConnectError
+[OpenSERP] Connection error on attempt 2/3: ConnectError
+[OpenSERP] Connection error on attempt 2/3: ConnectError
+[OpenSERP] Connection error on attempt 2/3: ConnectError
+[OpenSERP] Connection error on attempt 2/3: ConnectError
+[OpenSERP] Connection error on attempt 2/3: ConnectError
+[OpenSERP] Connection error on attempt 2/3: ConnectError
+[OpenSERP] Connection error on attempt 2/3: ConnectError
+[OpenSERP] Connection error on attempt 2/3: ConnectError
+[OpenSERP] Connection error on attempt 2/3: ConnectError
+[OpenSERP] Connection error on attempt 2/3: ConnectError
+[OpenSERP] Connection error on attempt 3/3: ConnectError
+[OpenSERP] All retries exhausted for: Gold chain necklace
+[OpenSERP] Connection error on attempt 3/3: ConnectError
+[OpenSERP] All retries exhausted for: Gold hoop earrings
+[OpenSERP] Connection error on attempt 3/3: ConnectError
+[OpenSERP] All retries exhausted for: Beige clutch bag
+[OpenSERP] Connection error on attempt 3/3: ConnectError
+[OpenSERP] All retries exhausted for: Beige strappy sandals
+[OpenSERP] Connection error on attempt 3/3: ConnectError
+[OpenSERP] All retries exhausted for: Espresso brown linen dress
+[OpenSERP] Connection error on attempt 3/3: ConnectError
+[OpenSERP] All retries exhausted for: Gold bracelet
+[OpenSERP] Connection error on attempt 3/3: ConnectError
+[OpenSERP] All retries exhausted for: Statement gold earrings
+[OpenSERP] Connection error on attempt 3/3: ConnectError
+[OpenSERP] All retries exhausted for: Elegant clutch bag
+[OpenSERP] Connection error on attempt 3/3: ConnectError
+[OpenSERP] All retries exhausted for: Black ankle strap heels
+[OpenSERP] Connection error on attempt 3/3: ConnectError
+[OpenSERP] All retries exhausted for: Beige slip dress
+[OpenSERP] Connection error on attempt 3/3: ConnectError
+[OpenSERP] All retries exhausted for: Statement gold earrings
+[OpenSERP] Connection error on attempt 3/3: ConnectError
+[OpenSERP] All retries exhausted for: Elegant clutch bag
+
+======================================================================
+                    ELARA AI PERSONAL STYLIST
+                         Smoke Test Demo
+======================================================================
+
+📋 Session Details:
+   • Gender: women
+   • Occasion: Wedding
+   • Vibe: Chill
+   • Location: Soho, New York
+   • Date/Time: 2025-10-05T18:00:00
+   • Wardrobe Items: 2
+
+──────────────────────────────────────────────────────────────────────
+Phase 1: Deterministic Preprocessing
+──────────────────────────────────────────────────────────────────────
+✓ Context pack prepared (hash: b8bb5550e983...)
+  • Weather: 20°C, Clear
+  • Temperature band: mild
+
+──────────────────────────────────────────────────────────────────────
+Phase 2: LLM Reasoning (GPT-4o)
+──────────────────────────────────────────────────────────────────────
+Generating outfit ideas...
+[Fashion Trends] Fetching latest trends from sources...
+[Fashion Trends] Searching for 2025 Fall fashion trends...
+[Fashion Trends] Searching: fashion trends 2025 Vogue
+[Fashion Trends] Performing web search for: fashion trends 2025 Vogue
+[Fashion Trends] Found 5 search results
+[Fashion Trends] Searching: fashion trends 2025 Fall
+[Fashion Trends] Performing web search for: fashion trends 2025 Fall
+[Fashion Trends] Found 5 search results
+[Fashion Trends] Searching: fashion trends 2025 Harper's Bazaar
+[Fashion Trends] Performing web search for: fashion trends 2025 Harper's Bazaar
+[Fashion Trends] Found 5 search results
+[Fashion Trends] Searching: fashion trends 2025 Elle
+[Fashion Trends] Performing web search for: fashion trends 2025 Elle
+[Fashion Trends] Found 5 search results
+[Fashion Trends] Combined 20 unique search results
+[Fashion Trends] Extracting trends using OpenAI...
+[Fashion Trends] Successfully extracted 5 trends from web search
+✓ Generated 3 outfit recommendations
+  1. Wardrobe Hero with a Twist
+  2. Smart Upgrade
+  3. Fresh Investment
+
+──────────────────────────────────────────────────────────────────────
+Phase 3: Agentic Product Matching
+──────────────────────────────────────────────────────────────────────
+Searching product catalogs and matching items...
+[ProductSearch] OpenSERP manager disabled (manual server management)
+[ProductSearch] OpenSERP client initialized (port 7001)
+[OpenSERP] Searching for: Black ankle strap heels
+[OpenSERP] Searching for: Elegant clutch bag
+[OpenSERP] Searching for: Statement gold earrings
+[OpenSERP] Searching for: Beige slip dress
+[OpenSERP] Searching for: Black ankle strap heels
+[OpenSERP] Searching for: Elegant clutch bag
+[OpenSERP] Searching for: Statement gold earrings
+[OpenSERP] Searching for: Gold bracelet
+[OpenSERP] Searching for: Espresso brown linen dress
+[OpenSERP] Searching for: Beige strappy sandals
+[OpenSERP] Searching for: Beige clutch bag
+[OpenSERP] Searching for: Gold hoop earrings
+[OpenSERP] Searching for: Gold chain necklace
+[OpenSERP] Found 29 products from 3 engines
+[DEBUG] search_multi_source: 1 results from asyncio.gather
+[DEBUG] Result 0: 29 products
+[DEBUG] Before deduplication: 29 products
+[DEBUG] After deduplication: 29 products
+[DEBUG] After filtering (max_price=300, retailers=['Zara', 'H&M', 'ASOS', 'Nordstrom', "Macy's", 'Amazon Fashion', 'Urban Outfitters', 'Revolve']): 29 products
+[DEBUG] After ranking: 29 products, returning top 50
+[OpenSERP] No products found
+[DEBUG] search_multi_source: 1 results from asyncio.gather
+[DEBUG] Result 0: 0 products
+[DEBUG] Before deduplication: 0 products
+[DEBUG] After deduplication: 0 products
+[DEBUG] After filtering (max_price=300, retailers=['Zara', 'H&M', 'ASOS', 'Nordstrom', "Macy's", 'Amazon Fashion', 'Urban Outfitters', 'Revolve']): 0 products
+[DEBUG] After ranking: 0 products, returning top 50
+[OpenSERP] No products found
+[DEBUG] search_multi_source: 1 results from asyncio.gather
+[DEBUG] Result 0: 0 products
+[DEBUG] Before deduplication: 0 products
+[DEBUG] After deduplication: 0 products
+[DEBUG] After filtering (max_price=300, retailers=['Zara', 'H&M', 'ASOS', 'Nordstrom', "Macy's", 'Amazon Fashion', 'Urban Outfitters', 'Revolve']): 0 products
+[DEBUG] After ranking: 0 products, returning top 50
+[OpenSERP] No products found
+[DEBUG] search_multi_source: 1 results from asyncio.gather
+[DEBUG] Result 0: 0 products
+[DEBUG] Before deduplication: 0 products
+[DEBUG] After deduplication: 0 products
+[DEBUG] After filtering (max_price=300, retailers=['Zara', 'H&M', 'ASOS', 'Nordstrom', "Macy's", 'Amazon Fashion', 'Urban Outfitters', 'Revolve']): 0 products
+[DEBUG] After ranking: 0 products, returning top 50
+[OpenSERP] No products found
+[DEBUG] search_multi_source: 1 results from asyncio.gather
+[DEBUG] Result 0: 0 products
+[DEBUG] Before deduplication: 0 products
+[DEBUG] After deduplication: 0 products
+[DEBUG] After filtering (max_price=300, retailers=['Zara', 'H&M', 'ASOS', 'Nordstrom', "Macy's", 'Amazon Fashion', 'Urban Outfitters', 'Revolve']): 0 products
+[DEBUG] After ranking: 0 products, returning top 50
+[OpenSERP] No products found
+[DEBUG] search_multi_source: 1 results from asyncio.gather
+[DEBUG] Result 0: 0 products
+[DEBUG] Before deduplication: 0 products
+[DEBUG] After deduplication: 0 products
+[DEBUG] After filtering (max_price=300, retailers=['Zara', 'H&M', 'ASOS', 'Nordstrom', "Macy's", 'Amazon Fashion', 'Urban Outfitters', 'Revolve']): 0 products
+[DEBUG] After ranking: 0 products, returning top 50
+[OpenSERP] No products found
+[DEBUG] search_multi_source: 1 results from asyncio.gather
+[DEBUG] Result 0: 0 products
+[DEBUG] Before deduplication: 0 products
+[DEBUG] After deduplication: 0 products
+[DEBUG] After filtering (max_price=300, retailers=['Zara', 'H&M', 'ASOS', 'Nordstrom', "Macy's", 'Amazon Fashion', 'Urban Outfitters', 'Revolve']): 0 products
+[DEBUG] After ranking: 0 products, returning top 50
+[OpenSERP] No products found
+[DEBUG] search_multi_source: 1 results from asyncio.gather
+[DEBUG] Result 0: 0 products
+[DEBUG] Before deduplication: 0 products
+[DEBUG] After deduplication: 0 products
+[DEBUG] After filtering (max_price=300, retailers=['Zara', 'H&M', 'ASOS', 'Nordstrom', "Macy's", 'Amazon Fashion', 'Urban Outfitters', 'Revolve']): 0 products
+[DEBUG] After ranking: 0 products, returning top 50
+[OpenSERP] No products found
+[DEBUG] search_multi_source: 1 results from asyncio.gather
+[DEBUG] Result 0: 0 products
+[DEBUG] Before deduplication: 0 products
+[DEBUG] After deduplication: 0 products
+[DEBUG] After filtering (max_price=300, retailers=['Zara', 'H&M', 'ASOS', 'Nordstrom', "Macy's", 'Amazon Fashion', 'Urban Outfitters', 'Revolve']): 0 products
+[DEBUG] After ranking: 0 products, returning top 50
+[OpenSERP] No products found
+[DEBUG] search_multi_source: 1 results from asyncio.gather
+[DEBUG] Result 0: 0 products
+[DEBUG] Before deduplication: 0 products
+[DEBUG] After deduplication: 0 products
+[DEBUG] After filtering (max_price=300, retailers=['Zara', 'H&M', 'ASOS', 'Nordstrom', "Macy's", 'Amazon Fashion', 'Urban Outfitters', 'Revolve']): 0 products
+[DEBUG] After ranking: 0 products, returning top 50
+[OpenSERP] No products found
+[DEBUG] search_multi_source: 1 results from asyncio.gather
+[DEBUG] Result 0: 0 products
+[DEBUG] Before deduplication: 0 products
+[DEBUG] After deduplication: 0 products
+[DEBUG] After filtering (max_price=300, retailers=['Zara', 'H&M', 'ASOS', 'Nordstrom', "Macy's", 'Amazon Fashion', 'Urban Outfitters', 'Revolve']): 0 products
+[DEBUG] After ranking: 0 products, returning top 50
+[OpenSERP] No products found
+[DEBUG] search_multi_source: 1 results from asyncio.gather
+[DEBUG] Result 0: 0 products
+[DEBUG] Before deduplication: 0 products
+[DEBUG] After deduplication: 0 products
+[DEBUG] After filtering (max_price=300, retailers=['Zara', 'H&M', 'ASOS', 'Nordstrom', "Macy's", 'Amazon Fashion', 'Urban Outfitters', 'Revolve']): 0 products
+[DEBUG] After ranking: 0 products, returning top 50
+[OpenSERP] No products found
+[DEBUG] search_multi_source: 1 results from asyncio.gather
+[DEBUG] Result 0: 0 products
+[DEBUG] Before deduplication: 0 products
+[DEBUG] After deduplication: 0 products
+[DEBUG] After filtering (max_price=300, retailers=['Zara', 'H&M', 'ASOS', 'Nordstrom', "Macy's", 'Amazon Fashion', 'Urban Outfitters', 'Revolve']): 0 products
+[DEBUG] After ranking: 0 products, returning top 50
+[ProductMatch] 'Black ankle strap heels' -> 29 candidates found
+  [Rerank] Black ankle strap heels... → openserp_4378430201 (Macy's) is the best match because it offers classic, formal black ankle-strap heels from a trusted retailer with good return policy and a strong chance of finding quality options within the $150–$300 budget.
+[ProductMatch] After reranking: 3 products selected
+[ProductMatch] 'Elegant clutch bag' -> 0 candidates found
+[ProductMatch] After reranking: 0 products selected
+[ProductMatch] 'Statement gold earrings' -> 0 candidates found
+[ProductMatch] After reranking: 0 products selected
+[ProductMatch] 'Beige slip dress' -> 0 candidates found
+[ProductMatch] After reranking: 0 products selected
+[ProductMatch] 'Black ankle strap heels' -> 0 candidates found
+[ProductMatch] After reranking: 0 products selected
+[ProductMatch] 'Elegant clutch bag' -> 0 candidates found
+[ProductMatch] After reranking: 0 products selected
+[ProductMatch] 'Statement gold earrings' -> 0 candidates found
+[ProductMatch] After reranking: 0 products selected
+[ProductMatch] 'Gold bracelet' -> 0 candidates found
+[ProductMatch] After reranking: 0 products selected
+[ProductMatch] 'Espresso brown linen dress' -> 0 candidates found
+[ProductMatch] After reranking: 0 products selected
+[ProductMatch] 'Beige strappy sandals' -> 0 candidates found
+[ProductMatch] After reranking: 0 products selected
+[ProductMatch] 'Beige clutch bag' -> 0 candidates found
+[ProductMatch] After reranking: 0 products selected
+[ProductMatch] 'Gold hoop earrings' -> 0 candidates found
+[ProductMatch] After reranking: 0 products selected
+[ProductMatch] 'Gold chain necklace' -> 0 candidates found
+[ProductMatch] After reranking: 0 products selected
+⚠️  [Incomplete Outfit] No product found for accessory: 'Elegant clutch bag'
+   This item will be missing from the 'Wardrobe Hero with a Twist' outfit
+⚠️  [Incomplete Outfit] No product found for accessory: 'Statement gold earrings'
+   This item will be missing from the 'Wardrobe Hero with a Twist' outfit
+⚠️  [Incomplete Outfit] No product found for one_piece: 'Beige slip dress'
+   This item will be missing from the 'Smart Upgrade' outfit
+⚠️  [Incomplete Outfit] No product found for footwear: 'Black ankle strap heels'
+   This item will be missing from the 'Smart Upgrade' outfit
+⚠️  [Incomplete Outfit] No product found for accessory: 'Elegant clutch bag'
+   This item will be missing from the 'Smart Upgrade' outfit
+⚠️  [Incomplete Outfit] No product found for accessory: 'Statement gold earrings'
+   This item will be missing from the 'Smart Upgrade' outfit
+⚠️  [Incomplete Outfit] No product found for accessory: 'Gold bracelet'
+   This item will be missing from the 'Smart Upgrade' outfit
+⚠️  [Incomplete Outfit Warning] 'Smart Upgrade' is missing key items:
+   - Missing: Top/Dress
+   - Missing: Bottom/Pants
+   - Missing: Footwear
+   - Only 0 items (minimum: 3)
+⚠️  [Incomplete Outfit] No product found for one_piece: 'Espresso brown linen dress'
+   This item will be missing from the 'Fresh Investment' outfit
+⚠️  [Incomplete Outfit] No product found for footwear: 'Beige strappy sandals'
+   This item will be missing from the 'Fresh Investment' outfit
+⚠️  [Incomplete Outfit] No product found for accessory: 'Beige clutch bag'
+   This item will be missing from the 'Fresh Investment' outfit
+⚠️  [Incomplete Outfit] No product found for accessory: 'Gold hoop earrings'
+   This item will be missing from the 'Fresh Investment' outfit
+⚠️  [Incomplete Outfit] No product found for accessory: 'Gold chain necklace'
+   This item will be missing from the 'Fresh Investment' outfit
+⚠️  [Incomplete Outfit Warning] 'Fresh Investment' is missing key items:
+   - Missing: Top/Dress
+   - Missing: Bottom/Pants
+   - Missing: Footwear
+   - Only 0 items (minimum: 3)
+✓ Enriched outfits with product matches
+
+──────────────────────────────────────────────────────────────────────
+Phase 4: Deterministic Scoring
+──────────────────────────────────────────────────────────────────────
+✓ Scored and ranked 3 outfits
+
+======================================================================
+                      FINAL RECOMMENDATIONS
+======================================================================
+
+🎨 LOOK #1: Wardrobe Hero with a Twist
+   Score: 8.6/10
+   A chic yet minimal look using a crochet sweater and new pieces for a wedding in Soho.
+
+   Items:
+     • [Wardrobe] Item item_000345
+     • [Wardrobe] Item item_000346
+     • [Duckduckgo] Black Ankle Strap Heels - Macy's
+Traceback (most recent call last):
+  File "/Users/saksham/Codes/Elara-Joining/scripts/smoke_demo.py", line 202, in <module>
+    main()
+    ~~~~^^
+  File "/Users/saksham/Codes/Elara-Joining/scripts/smoke_demo.py", line 176, in main
+    print(f"       ${item['price']['value']} - {item['buy_link']}")
+                     ~~~~~~~~~~~~~^^^^^^^^^
+TypeError: 'NoneType' object is not subscriptable
